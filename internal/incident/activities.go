@@ -49,12 +49,34 @@ type IncidentWarRoomActivity struct {
 	TearDownWarRoomFunc func() error
 }
 
+func NewRealIncidentWarRoomActivity() IncidentWarRoomActivity {
+	// Connect to 100ms
+	// Take credentials from ENV ..
+	// STart with hard coded first ..
+	return IncidentWarRoomActivity{}
+}
+
+func NewFakerIncidentWarRoomActivity() IncidentWarRoomActivity {
+	// depending on the scenarios .. we can return different behavior
+	return IncidentWarRoomActivity{
+		InitiateWarRoomFunc: func() error {
+			return nil
+		},
+		TearDownWarRoomFunc: func() error {
+			return nil
+		},
+	}
+}
+
 func (iwa IncidentWarRoomActivity) Setup() {
 
 }
 
 func (iwa IncidentWarRoomActivity) InitiateWarRoom() {
-
+	err := iwa.InitiateWarRoomFunc()
+	if err != nil {
+		panic(err)
+	}
 }
 
 func (iwa IncidentWarRoomActivity) TearDownWarRoom() {

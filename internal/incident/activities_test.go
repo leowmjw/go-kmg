@@ -263,3 +263,26 @@ func TestIncidentWarRoomActivity_TearDownWarRoom(t *testing.T) {
 		})
 	}
 }
+
+// TestIncidentWarRoomActivity will try to initiate faker video infra?
+func TestIncidentWarRoomActivity(t *testing.T) {
+	// Faker happy path ..
+	iwa := NewFakerIncidentWarRoomActivity()
+	// Below only for real thing?
+	//iwa.Setup()
+	iwa.InitiateWarRoom()
+	// Assert and check states?
+}
+
+// TestRealIncidentWarRoomActivity will try to initiate faker video infra?
+func TestRealIncidentWarRoomActivity(t *testing.T) {
+	// Integration test here ..
+	iwa := NewRealIncidentWarRoomActivity()
+	// Below only for real thing?
+	iwa.Setup()
+	iwa.InitiateWarRoom()
+	// Assert and check states?
+
+	// Integration test here .. might suceed or fail ..
+
+}
