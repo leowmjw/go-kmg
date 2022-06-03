@@ -1,6 +1,9 @@
 package incident
 
-import "testing"
+import (
+	"go.temporal.io/sdk/testsuite"
+	"testing"
+)
 
 func TestIncidentCommsActivity_PublishPrivate(t *testing.T) {
 	type fields struct {
@@ -276,6 +279,10 @@ func TestIncidentWarRoomActivity(t *testing.T) {
 
 // TestRealIncidentWarRoomActivity will try to initiate faker video infra?
 func TestRealIncidentWarRoomActivity(t *testing.T) {
+
+	wts := testsuite.WorkflowTestSuite{}
+	env := wts.NewTestActivityEnvironment()
+	//env.RegisterActivity(..)
 	// Integration test here ..
 	iwa := NewRealIncidentWarRoomActivity()
 	// Below only for real thing?

@@ -15,3 +15,7 @@
 - Use Temporal to mark flow that is Training / Test; and to convert existing
 - Bridge via SCIM v2 to underlying universal identity graph - go-lmk
 
+
+## Catching Error
+
+- Try out HoneyBadger to catch unexpected interactions ..e.g. instead of panics ..
